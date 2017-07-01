@@ -329,7 +329,7 @@ RCT_EXPORT_METHOD(signInWithCredential:(NSString *)provider token:(NSString *)au
  @param RCTPromiseRejectBlock reject
  @return
  */
-RCT_EXPORT_METHOD(verifyPhoneNumber:(NSString*) phoneNumber resolver:(RCTPromiseResolveBlock) resolve rejecter:(RCTPromiseRejectBlock) reject) {
+RCT_EXPORT_METHOD(verifyPhoneNumber:(NSString*) phoneNumber resolver:(RCTPromiseResolveBlock) resolve rejecter:(RCTPromiseRejectBlock) reject)
 {
     [[FIRPhoneAuthProvider provider]
      verifyPhoneNumber: phoneNumber
