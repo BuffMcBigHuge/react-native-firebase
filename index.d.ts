@@ -11,7 +11,7 @@ declare module "react-native-firebase" {
     analytics(): RNFirebase.Analytics;
     auth(): RNFirebase.auth.Auth;
     on(type: string, handler: (msg: any) => void): any;
-    /** mimics firebase Web SDK */    
+    /** mimics firebase Web SDK */
     database: {
       (): RNFirebase.database.Database
       ServerValue: {
@@ -530,6 +530,8 @@ declare module "react-native-firebase" {
          * credential requires the following properties:
          */
         signInWithCredential(credential: Credential): Promise<User>
+        verifyPhoneNumber(phoneNumber: string): Promise<string>
+        signInWithPhone(verificationId: string, verificationCode: string): Promise<User>
         /**
          * Sign a user in with a self-signed JWT token.
          * To sign a user using a self-signed custom token,
