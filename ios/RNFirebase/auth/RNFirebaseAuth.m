@@ -338,7 +338,7 @@ RCT_EXPORT_METHOD(verifyPhoneNumber:(NSString*) phoneNumber resolver:(RCTPromise
         if (error) {
             [self promiseRejectAuthException:reject error:error];
         } else {
-            [self promiseWithUser:resolve rejecter:reject verificationID:verificationID];
+            resolve(verificationID);
         }
 
     }];
