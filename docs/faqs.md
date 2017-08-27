@@ -2,12 +2,7 @@
 
 ## Usage with Expo
 
-If you use Expo and would like to use this package, you'll need to eject. If you do not want to eject, but wish to make use of features
-such as Realtime Database (without offline support) & Authentication, you can still use the Firebase Web SDK in your project. 
-
-For features such a Crash Reporting, Push Notifications (via Firebase not Expo), Performance Monitoring, AdMob, Analytics, Storage & Remote Config, you will have to eject your Expo project as these require the native SDKs, as the Web SDK does not support these.
-
-You can see an indepth conversation [here](https://expo.canny.io/feature-requests/p/full-native-firebase-integration).
+ See [usage with expo](/faq/expo).
 
 ## Comparison to Firestack
 
@@ -18,38 +13,6 @@ too large to manage on the existing repository, whilst trying to maintain backwa
 
 RNFirebase was re-written from the ground up, addressing these issues with core focus being around matching the Web SDK as
 closely as possible and fixing the major bugs/issues along the way.
-
-## How do I integrate Redux with RNFirebase
-
-As every project has different requirements & structure, RNFirebase *currently* has no built in methods for Redux integration.
-As RNFirebase can be used outside of a Components context, you do have free reign to integrate it as you see fit. For example,
-with [`redux-thunk`](https://github.com/gaearon/redux-thunk) you dispatch updates to your store with updates from Firebase:
-
-```javascript
-class MyApp extends React.Component {
-
-  componentDidMount() {
-    this.props.dispatch(onAuthStateChanged());
-  }
-
-  ...
-}
-
-connect()(MyApp);
-```
-
-```javascript
-export function onAuthStateChanged() {
-  return (dispatch) => {
-    firebase.auth().onAuthStateChanged((user) => {
-      dispatch({
-        type: 'AUTH_STATE_CHANGE',
-        user,
-      });
-    });
-  };
-}
-```
 
 ## [Android] Google Play Services related issues
 
